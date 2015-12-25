@@ -85,7 +85,7 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
 # Set the prompt theme to load.
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
-zstyle ':prezto:module:prompt' theme 'sorin'
+zstyle ':prezto:module:prompt' theme 'skwp'
 
 #
 # Ruby
@@ -155,3 +155,42 @@ zstyle ':prezto:module:prompt' theme 'sorin'
 
 # Integrate with iTerm2.
 # zstyle ':prezto:module:tmux:iterm' integrate 'yes'
+
+
+
+
+##
+# OS specific modules
+##
+
+# OS Detection, stolen from jdavis
+UNAME=`uname`
+
+# Fallback info
+CURRENT_OS='Linux'
+DISTRO=''
+
+if [[ $UNAME == 'Darwin' ]]; then
+    CURRENT_OS='OS X'
+else
+    # Must be Linux, determine distro
+    if [[ -f /etc/redhat-release ]]; then
+        # CentOS or Redhat?
+        if grep -q "CentOS" /etc/redhat-release; then
+            DISTRO='CentOS'
+        else
+            DISTRO='RHEL'
+        fi
+    fi
+fi
+
+if [[ $CURRENT_OS == 'OS X' ]]; then
+    
+
+elif [[ $CURRENT_OS == 'Linux' ]]; then
+    
+
+    if [[ $DISTRO == 'CentOS' ]]; then
+    fi
+elif [[ $CURRENT_OS == 'Cygwin' ]]; then
+fi

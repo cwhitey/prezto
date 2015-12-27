@@ -89,7 +89,7 @@ alias ggv='git grep --invert-match'
 alias ggw='git grep --word-regexp'
 
 # Index (i)
-alias gia='git add'
+alias ga='git add'
 alias giA='git add --patch'
 alias giu='git add --update'
 alias gid='git diff --no-ext-diff --cached'
@@ -169,6 +169,7 @@ alias gSu='git submodule foreach git pull origin master'
 alias gSx='git-submodule-remove'
 
 # Working Copy (w)
+alias gst='git status'
 alias gws='git status --ignore-submodules=${_git_status_ignore_submodules} --short'
 alias gwS='git status --ignore-submodules=${_git_status_ignore_submodules}'
 alias gwd='git diff --no-ext-diff'

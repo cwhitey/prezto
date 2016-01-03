@@ -24,15 +24,23 @@ zstyle ':prezto:*:*' color 'yes'
 # Set the Prezto modules to load (browse modules).
 # The order matters.
 zstyle ':prezto:load' pmodule \
-  'environment' \
-  'terminal' \
-  'editor' \
-  'history' \
-  'directory' \
-  'spectrum' \
-  'utility' \
-  'completion' \
-  'prompt'
+       'environment' \
+       'terminal' \
+       'editor' \
+       'history' \
+       'directory' \
+       'spectrum' \
+       'utility' \
+       'ssh' \
+       'completion' \
+       'homebrew' \
+       'osx' \
+       'ruby' \
+       'rails' \
+       'git' \
+       'syntax-highlighting' \
+       'history-substring-search' \
+       'prompt'
 
 #
 # Editor
@@ -42,7 +50,7 @@ zstyle ':prezto:load' pmodule \
 zstyle ':prezto:module:editor' key-bindings 'emacs'
 
 # Auto convert .... to ../..
-# zstyle ':prezto:module:editor' dot-expansion 'yes'
+zstyle ':prezto:module:editor' dot-expansion 'yes'
 
 #
 # Git
@@ -92,7 +100,7 @@ zstyle ':prezto:module:prompt' theme 'skwp'
 #
 
 # Auto switch the Ruby version on directory change.
-# zstyle ':prezto:module:ruby:chruby' auto-switch 'yes'
+zstyle ':prezto:module:ruby:chruby' auto-switch 'yes'
 
 #
 # Screen
@@ -135,7 +143,7 @@ zstyle ':prezto:module:prompt' theme 'skwp'
 #
 
 # Auto set the tab and window titles.
-# zstyle ':prezto:module:terminal' auto-title 'yes'
+zstyle ':prezto:module:terminal' auto-title 'yes'
 
 # Set the window title format.
 # zstyle ':prezto:module:terminal:window-title' format '%n@%m: %s'
@@ -155,42 +163,3 @@ zstyle ':prezto:module:prompt' theme 'skwp'
 
 # Integrate with iTerm2.
 # zstyle ':prezto:module:tmux:iterm' integrate 'yes'
-
-
-
-
-##
-# OS specific modules
-##
-
-# OS Detection, stolen from jdavis
-UNAME=`uname`
-
-# Fallback info
-CURRENT_OS='Linux'
-DISTRO=''
-
-if [[ $UNAME == 'Darwin' ]]; then
-    CURRENT_OS='OS X'
-else
-    # Must be Linux, determine distro
-    if [[ -f /etc/redhat-release ]]; then
-        # CentOS or Redhat?
-        if grep -q "CentOS" /etc/redhat-release; then
-            DISTRO='CentOS'
-        else
-            DISTRO='RHEL'
-        fi
-    fi
-fi
-
-if [[ $CURRENT_OS == 'OS X' ]]; then
-    
-
-elif [[ $CURRENT_OS == 'Linux' ]]; then
-    
-
-    if [[ $DISTRO == 'CentOS' ]]; then
-    fi
-elif [[ $CURRENT_OS == 'Cygwin' ]]; then
-fi

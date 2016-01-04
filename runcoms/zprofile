@@ -72,3 +72,6 @@ if [[ ! -d "$TMPDIR" ]]; then
 fi
 
 TMPPREFIX="${TMPDIR%/}/zsh"
+
+
+chruby ruby-2.1.2

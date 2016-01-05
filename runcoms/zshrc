@@ -18,12 +18,6 @@ fi
 alias cljsbuild="lein trampoline cljsbuild $@"
 
 
-##
-# Ruby
-## 
-source /usr/local/share/chruby/chruby.sh
-# source /usr/local/share/chruby/auto.sh # auto-switching prezto setting should do this for us
-
 
 ##
 # Emacs

@@ -5,13 +5,10 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
-# Ensure that a non-login, non-interactive shell has a defined environment.
-if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprofile"
-fi
-
-
+#
 # PATH
+#
+
 export PATH="/usr/local/Cellar/emacs/24.5/bin:$PATH"
 ## Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -23,3 +20,10 @@ export TERM=xterm-256color
 
 export LEIN_FAST_TRAMPOLINE=y
 
+
+
+
+# Ensure that a non-login, non-interactive shell has a defined environment.
+if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprofile"
+fi

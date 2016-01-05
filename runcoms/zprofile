@@ -6,6 +6,16 @@
 #
 
 #
+# Ruby
+#
+
+source /usr/local/share/chruby/chruby.sh
+# source /usr/local/share/chruby/auto.sh # auto-switching prezto setting should do this for us
+# Set default ruby version to 2.1.2
+chruby ruby-2.1.2
+
+
+#
 # Browser
 #
 
@@ -13,13 +23,14 @@ if [[ "$OSTYPE" == darwin* ]]; then
   export BROWSER='open'
 fi
 
+
 #
 # Editors
 #
 
-export EDITOR='nano'
 export VISUAL='nano'
 export PAGER='less'
+
 
 #
 # Language
@@ -28,6 +39,7 @@ export PAGER='less'
 if [[ -z "$LANG" ]]; then
   export LANG='en_US.UTF-8'
 fi
+
 
 #
 # Paths
@@ -47,6 +59,7 @@ path=(
   $path
 )
 
+
 #
 # Less
 #
@@ -62,6 +75,7 @@ if (( $#commands[(i)lesspipe(|.sh)] )); then
   export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
 fi
 
+
 #
 # Temporary Files
 #
@@ -72,6 +86,3 @@ if [[ ! -d "$TMPDIR" ]]; then
 fi
 
 TMPPREFIX="${TMPDIR%/}/zsh"
-
-
-chruby ruby-2.1.2

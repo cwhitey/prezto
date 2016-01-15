@@ -18,6 +18,11 @@ fi
 alias cljsbuild="lein trampoline cljsbuild $@"
 
 
+##
+# Ruby
+##
+alias be='bundle exec'
+
 
 ##
 # Emacs

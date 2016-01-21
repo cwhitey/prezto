@@ -13,6 +13,10 @@ fi
 # Customize to your needs...
 
 ##
+# Git
+##
+alias gcb='git checkout -b'
+##
 # Clojure
 ##
 alias cljsbuild="lein trampoline cljsbuild $@"

@@ -34,6 +34,13 @@ alias be='bundle exec'
 # start emacs server
 alias es='emacs --daemon'
 
+
+##
+# Terminal Markdown Viewer https://github.com/axiros/terminal_markdown_viewer
+##
+alias mdv='mdv -t "palette 99"'
+
+
 # NOTE: if alternate-editor is an empty string, Emacs is started in daemon mode and emacsclient will try to connect to it
 # NOTE: the trailing '&' to run this as a background process doesn't work when an emacs daemon isn't running
 # open emacs in a gui frame

@@ -5,15 +5,6 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
-#
-# Ruby
-#
-
-source /usr/local/share/chruby/chruby.sh
-# source /usr/local/share/chruby/auto.sh # auto-switching prezto setting should do this for us
-# Set default ruby version to 2.1.2
-chruby ruby-2.1.2
-
 
 #
 # Browser
@@ -59,6 +50,8 @@ path=(
   $path
 )
 
+# Node's install path
+export NODE_PATH=/opt/lib/node_modules
 
 #
 # Less

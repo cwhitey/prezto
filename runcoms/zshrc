@@ -10,12 +10,15 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# Customize to your needs...
+# PERSONAL CUSTOMISATION....
+
+
 
 ##
 # Git
 ##
 alias gcb='git checkout -b'
+
 
 ##
 # Clojure
@@ -28,10 +31,17 @@ alias cljsbuild="lein trampoline cljsbuild $@"
 ##
 alias be='bundle exec'
 
+# chruby setup
 source /usr/local/share/chruby/chruby.sh
 # source /usr/local/share/chruby/auto.sh # auto-switching prezto setting should do this for us
-# Set default ruby version to 2.1.2
-chruby ruby-2.1.2
+chruby ruby-2.1.2 # Set default ruby version
+
+
+##
+# Terminal Markdown Viewer https://github.com/axiros/terminal_markdown_viewer
+##
+# Unfortunately buggy, but currently the best terminal markdown viewer for my needs
+alias mdv='mdv -t "palette 99"'
 
 
 ##
@@ -39,13 +49,6 @@ chruby ruby-2.1.2
 ##
 # start emacs server
 alias es='emacs --daemon'
-
-
-##
-# Terminal Markdown Viewer https://github.com/axiros/terminal_markdown_viewer
-##
-alias mdv='mdv -t "palette 99"'
-
 
 # NOTE: if alternate-editor is an empty string, Emacs is started in daemon mode and emacsclient will try to connect to it
 # NOTE: the trailing '&' to run this as a background process doesn't work when an emacs daemon isn't running

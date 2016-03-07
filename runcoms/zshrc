@@ -61,3 +61,5 @@ alias ek="emacsclient -e '(kill-emacs)'"
 # restart emacs server
 alias er='ek; es;'
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

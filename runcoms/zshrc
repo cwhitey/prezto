@@ -30,7 +30,6 @@ alias cljsbuild="lein trampoline cljsbuild $@"
 # Ruby
 ##
 alias be='bundle exec'
-
 # chruby setup
 source /usr/local/share/chruby/chruby.sh
 # source /usr/local/share/chruby/auto.sh # auto-switching prezto setting should do this for us
@@ -49,20 +48,32 @@ alias mdv='mdv -t "palette 99"'
 ##
 # start emacs server
 alias es='emacs --daemon'
-
 # NOTE: if alternate-editor is an empty string, Emacs is started in daemon mode and emacsclient will try to connect to it
 # NOTE: the trailing '&' to run this as a background process doesn't work when an emacs daemon isn't running
 # open emacs in a gui frame
 function ec { emacsclient --alternate-editor='' -c $@ &; }
-
 # start emacs in a terminal
 alias et="emacsclient --alternate-editor='' -t"
-
 # kill emacs server
 alias ek="emacsclient -e '(kill-emacs)'"
-
 # restart emacs server
 alias er='ek; es;'
+
+
+##
+# fasd
+##
+alias a='fasd -a'        # any
+alias s='fasd -si'       # show / search / select
+alias d='fasd -d'        # directory
+alias f='fasd -f'        # file
+alias sd='fasd -sid'     # interactive directory selection
+alias sf='fasd -sif'     # interactive file selection
+alias z='fasd_cd -d'     # cd, same functionality as j in autojump
+alias zz='fasd_cd -d -i' # cd with interactive selection
+alias o='a -e open'      # use fasd to select file/directory to open
+# TODO: Do the above for emacs commands
+
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

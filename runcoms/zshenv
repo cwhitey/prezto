@@ -27,10 +27,9 @@ path=(
 # Node's install path
 export NODE_PATH=/opt/lib/node_modules
 export PATH="/usr/local/Cellar/emacs/24.5/bin:$PATH"
-# Android setup
-export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
-# Android SDK path
+# Android SDK and tools setup
 export ANDROID_HOME=~/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 # Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 

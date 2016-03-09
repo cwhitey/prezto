@@ -85,7 +85,6 @@ alias f='fasd -f'        # file
 alias sd='fasd -sid'     # interactive directory selection
 alias sf='fasd -sif'     # interactive file selection
 alias o='a -e open'      # use fasd to select file/directory to open
-# TODO: Do the above for emacs client/terminal commands
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -93,3 +92,6 @@ alias o='a -e open'      # use fasd to select file/directory to open
 export FZF_COMPLETION_TRIGGER=''
 bindkey '^T' fzf-completion
 bindkey '^I' $fzf_default_completion
+# Use the fast the_platinum_surfer instead of find. Also respects .gitignore etc.
+export FZF_DEFAULT_COMMAND='pt -l ""'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"

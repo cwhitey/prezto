@@ -64,7 +64,6 @@ alias er='ek; es;'
 # fasd & fzf
 ##
 # smart jump with fzf and fasd
-unalias j
 j() {
     local dir
     dir="$(fasd -Rdl "$1" | fzf -1 -0 --no-sort +m)" && cd "${dir}" || return 1
@@ -88,6 +87,9 @@ alias sf='fasd -sif'     # interactive file selection
 alias o='a -e open'      # use fasd to select file/directory to open
 # TODO: Do the above for emacs client/terminal commands
 
-
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Dedicated completion key while retaining default TAB (^I) behaviour
+export FZF_COMPLETION_TRIGGER=''
+bindkey '^T' fzf-completion
+bindkey '^I' $fzf_default_completion

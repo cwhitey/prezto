@@ -51,7 +51,7 @@ alias es='emacs --daemon'
 # NOTE: if alternate-editor is an empty string, Emacs is started in daemon mode and emacsclient will try to connect to it
 # NOTE: the trailing '&' to run this as a background process doesn't work when an emacs daemon isn't running
 # open emacs in a gui frame
-function ec { emacsclient --alternate-editor='' -c $@ &; }
+ec() { emacsclient --alternate-editor='' -c $@ &; }
 # start emacs in a terminal
 alias et="emacsclient --alternate-editor='' -t"
 # kill emacs server
@@ -61,9 +61,24 @@ alias er='ek; es;'
 
 
 ##
-# fasd
+# fasd & fzf
 ##
-#alias j is made available my the prezto fasd module
+# smart jump with fzf and fasd
+unalias j
+j() {
+    local dir
+    dir="$(fasd -Rdl "$1" | fzf -1 -0 --no-sort +m)" && cd "${dir}" || return 1
+}
+# smart-open with emacsclient
+v() {
+    local file
+    file="$(fasd -Rfl "$1" | fzf -1 -0 --no-sort +m)" && ec "${file}" || return 1
+}
+# smart-open with terminal emacs
+vt() {
+    local file
+    file="$(fasd -Rfl "$1" | fzf -1 -0 --no-sort +m)" && et "${file}" || return 1
+}
 alias a='fasd -a'        # any
 alias s='fasd -si'       # show / search / select
 alias d='fasd -d'        # directory

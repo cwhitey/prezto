@@ -64,6 +64,8 @@ alias er='ek; es;'
 # fasd & fzf
 ##
 # smart jump with fzf and fasd
+alias j=""
+unalias j
 j() {
     local dir
     dir="$(fasd -Rdl "$1" | fzf -1 -0 --no-sort +m)" && cd "${dir}" || return 1

@@ -17,6 +17,9 @@ fi
 ##
 # Git
 ##
+#for ghostscript
+unalias gs
+alias gstash='git stash'
 alias gcb='git checkout -b'
 
 
@@ -32,8 +35,8 @@ alias cljsbuild="lein trampoline cljsbuild $@"
 alias be='bundle exec'
 # chruby setup
 source /usr/local/share/chruby/chruby.sh
-# source /usr/local/share/chruby/auto.sh # auto-switching prezto setting should do this for us
-chruby ruby-2.1.2 # Set default ruby version
+source /usr/local/share/chruby/auto.sh
+chruby ruby-2.2.3 # Set default ruby version
 
 
 ##
@@ -49,7 +52,6 @@ alias mdv='mdv -t "palette 99"'
 # start emacs server
 alias es='emacs --daemon'
 # NOTE: if alternate-editor is an empty string, Emacs is started in daemon mode and emacsclient will try to connect to it
-# NOTE: the trailing '&' to run this as a background process doesn't work when an emacs daemon isn't running
 # open emacs in a gui frame
 ec() { emacsclient --alternate-editor='' -c $@ &; }
 # start emacs in a terminal

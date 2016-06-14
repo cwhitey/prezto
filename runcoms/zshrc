@@ -84,10 +84,11 @@ vt() {
 }
 alias a='fasd -a'        # any
 alias s='fasd -si'       # show / search / select
-alias d='fasd -d'        # directory
 alias f='fasd -f'        # file
+alias d='fasd -d'        # directory
 alias sd='fasd -sid'     # interactive directory selection
 alias sf='fasd -sif'     # interactive file selection
+alias z='fasd_cd -d'     # cd, same functionality as j in autojump
 alias o='a -e open'      # use fasd to select file/directory to open
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -99,3 +100,6 @@ bindkey '^I' $fzf_default_completion
 # Use the fast the_platinum_surfer instead of find. Also respects .gitignore etc.
 export FZF_DEFAULT_COMMAND='pt -l ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+export NVM_DIR="/Users/cwhitey/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

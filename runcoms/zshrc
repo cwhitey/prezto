@@ -17,11 +17,10 @@ fi
 ##
 # Git
 ##
-#for ghostscript
-unalias gs
+unalias gs # for ghostscript
 alias gstash='git stash'
 alias gcb='git checkout -b'
-
+alias gshm='git push heroku master'
 
 ##
 # Clojure

@@ -18,6 +18,7 @@ fi
 # Git
 ##
 alias gstash='git stash'
+alias gpop='git pop'
 alias gcb='git checkout -b'
 alias gshm='git push heroku master'
 

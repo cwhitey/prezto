@@ -17,7 +17,6 @@ fi
 ##
 # Git
 ##
-unalias gs # for ghostscript
 alias gstash='git stash'
 alias gcb='git checkout -b'
 alias gshm='git push heroku master'
@@ -95,6 +94,7 @@ alias o='a -e open'      # use fasd to select file/directory to open
 # Dedicated completion key while retaining default TAB (^I) behaviour
 export FZF_COMPLETION_TRIGGER=''
 bindkey '^T' fzf-completion
+bindkey '^I' $fzf_default_completion
 # Use the fast the_platinum_surfer instead of find. Also respects .gitignore etc.
 export FZF_DEFAULT_COMMAND='pt -l ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"

@@ -39,6 +39,19 @@ chruby ruby-2.2.3 # Set default ruby version
 
 
 ##
+# Docker
+##
+alias doc=docker
+alias dc=docker-compose
+alias dm=docker-machine
+alias dms='dm start'
+alias dmk='dm kill'
+dmenv () {
+    eval "$(docker-machine env $1)"
+}
+
+
+##
 # Terminal Markdown Viewer https://github.com/axiros/terminal_markdown_viewer
 ##
 # Unfortunately buggy, but currently the best terminal markdown viewer for my needs
@@ -67,7 +80,7 @@ alias er='ek; es;'
 # smart jump with fzf and fasd
 alias j=""
 unalias j
-j() {
+jj() {
     local dir
     dir="$(fasd -Rdl "$1" | fzf -1 -0 --no-sort +m)" && cd "${dir}" || return 1
 }
@@ -88,6 +101,7 @@ alias d='fasd -d'        # directory
 alias sd='fasd -sid'     # interactive directory selection
 alias sf='fasd -sif'     # interactive file selection
 alias z='fasd_cd -d'     # cd, same functionality as j in autojump
+alias j=z                # for autojump pairing partners
 alias o='a -e open'      # use fasd to select file/directory to open
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

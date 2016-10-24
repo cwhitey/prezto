@@ -43,13 +43,12 @@ chruby ruby-2.2.3 # Set default ruby version
 ##
 alias doc=docker
 alias dc=docker-compose
-alias dm=docker-machine
-alias dms='dm start'
-alias dmk='dm kill'
-dmenv () {
-    eval "$(docker-machine env $1)"
-}
-
+# Kill exited (non-running)
+alias doc_rm_exited='docker rm $(docker ps -aq --filter status=exited)'
+# Kill running
+alias doc_rm_running='docker rm -f $(docker ps -aq --filter status=running)'
+# Kill all
+alias doc_rm_all='docker rm -f $(docker ps -aq)'
 
 ##
 # Terminal Markdown Viewer https://github.com/axiros/terminal_markdown_viewer

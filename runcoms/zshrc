@@ -49,6 +49,8 @@ alias doc_rm_exited='docker rm $(docker ps -aq --filter status=exited)'
 alias doc_rm_running='docker rm -f $(docker ps -aq --filter status=running)'
 # Kill all
 alias doc_rm_all='docker rm -f $(docker ps -aq)'
+# Delete dangling images
+alias doc_del_dangling='docker rmi $(docker images -aq --filter dangling=true)'
 
 ##
 # Terminal Markdown Viewer https://github.com/axiros/terminal_markdown_viewer

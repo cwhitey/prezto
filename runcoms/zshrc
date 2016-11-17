@@ -76,6 +76,12 @@ alias er='ek; es;'
 
 
 ##
+# Cask
+##
+# aliased to `brew cask` by prezto but I need to use it for emacs' `Cask`
+unalias cask
+
+##
 # fasd & fzf
 ##
 # smart jump with fzf and fasd

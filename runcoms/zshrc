@@ -120,6 +120,3 @@ bindkey '^I' $fzf_default_completion
 # Use the fast the_platinum_surfer instead of find. Also respects .gitignore etc.
 export FZF_DEFAULT_COMMAND='pt -l ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-
-export NVM_DIR="/Users/cwhitey/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
